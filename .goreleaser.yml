@@ -22,56 +22,55 @@ builds:
       - 7
     ldflags:
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.buildSource=binaryRelease
-  - id: snap
-    goos:
-      - linux
-    goarch:
-      - amd64
-      - arm
-      - arm64
-      - 386
-    ldflags:
-      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.buildSource=snap
+  # - id: snap
+  #   goos:
+  #     - linux
+  #   goarch:
+  #     - amd64
+  #     - arm
+  #     - arm64
+  #     - 386
+  #   ldflags:
+  #     - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.buildSource=snap
 
 archives:
-  - builds:
+  - ids:
       - binary
-    replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: x86
-      amd64: x86_64
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - README.md
+      - LICENSE
+      
 
-checksum:
-  name_template: "checksums.txt"
+# checksum:
+#   name_template: "checksums.txt"
 
-snapshot:
-  name_template: "{{ .Tag }}-next"
+# snapshot:
+#   name_template: "{{ .Tag }}-next"
 
-changelog:
-  sort: asc
-  filters:
-    exclude:
-      - "^docs:"
-      - "^test:"
-      - "^bump"
+# changelog:
+#   sort: asc
+#   filters:
+#     exclude:
+#       - "^docs:"
+#       - "^test:"
+#       - "^bump"
 
-brews:
-  - tap:
-      owner: jesseduffield
-      name: homebrew-lazydocker
+# brews:
+#   - tap:
+#       owner: jesseduffield
+#       name: homebrew-lazydocker
 
-    # Your app's homepage.
-    # Default is empty.
-    homepage: "https://github.com/jesseduffield/lazydocker/"
+#     # Your app's homepage.
+#     # Default is empty.
+#     homepage: "https://github.com/jesseduffield/lazydocker/"
 
-    # Your app's description.
-    # Default is empty.
-    description: "A simple terminal UI for docker, written in Go"
+#     # Your app's description.
+#     # Default is empty.
+#     description: "A simple terminal UI for docker, written in Go"
 #snapcrafts:
 #  - builds:
 #      - snap
