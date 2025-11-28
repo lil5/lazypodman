@@ -5,3 +5,7 @@ Lazydocker.code-workspace
 .idea
 # Added by goreleaser init:
 dist/
+lazypodman*
+*.bak
+*~
+.DS_Store
