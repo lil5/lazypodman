@@ -3,3 +3,5 @@ TODO.md
 Lazydocker.code-workspace
 .vscode
 .idea
+# Added by goreleaser init:
+dist/
