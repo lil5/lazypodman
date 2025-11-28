@@ -250,7 +250,7 @@ func englishSet() TranslationSet {
 		NoServices:   "No services",
 
 		ConfirmQuit:                 "Are you sure you want to quit?",
-		ConfirmUpProject:            "Are you sure you want to 'up' your docker compose project?",
+		ConfirmUpProject:            "Are you sure you want to 'up' your podman compose project?",
 		MustForceToRemoveContainer:  "You cannot remove a running container unless you force it. Do you want to force it?",
 		NotEnoughSpace:              "Not enough space to render panels",
 		ConfirmPruneImages:          "Are you sure you want to prune all unused images?",

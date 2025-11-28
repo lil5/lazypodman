@@ -129,12 +129,12 @@ func NewDockerCommand(log *logrus.Entry, osCommand *OSCommand, tr *i18n.Translat
 }
 
 func (c *DockerCommand) setDockerComposeCommand(config *config.AppConfig) {
-	if config.UserConfig.CommandTemplates.DockerCompose != "docker compose" {
+	if config.UserConfig.CommandTemplates.DockerCompose != "podman compose" {
 		return
 	}
 
 	// it's possible that a user is still using docker-compose, so we'll check if 'docker comopose' is available, and if not, we'll fall back to 'docker-compose'
-	err := c.OSCommand.RunCommand("docker compose version")
+	err := c.OSCommand.RunCommand("podman compose version")
 	if err != nil {
 		config.UserConfig.CommandTemplates.DockerCompose = "docker-compose"
 	}

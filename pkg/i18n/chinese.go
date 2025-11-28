@@ -113,7 +113,7 @@ func chineseSet() TranslationSet {
 		NoServices:   "没有服务",
 
 		ConfirmQuit:                "您确定要退出吗？",
-		ConfirmUpProject:           "您确定要“up”的docker compose项目吗？",
+		ConfirmUpProject:           "您确定要“up”的podman compose项目吗？",
 		MustForceToRemoveContainer: "您无法删除正在运行的容器，除非您强制执行。您想强制执行吗？",
 		NotEnoughSpace:             "空间不足，无法渲染面板",
 		ConfirmPruneImages:         "您确定要删除所有未使用的镜像吗？",

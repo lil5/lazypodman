@@ -113,7 +113,7 @@ func (gui *Gui) handleNetworksRemoveMenu(g *gocui.Gui, v *gocui.View) error {
 	options := []*removeNetworkOption{
 		{
 			description: gui.Tr.Remove,
-			command:     utils.WithShortSha("docker network rm " + network.Name),
+			command:     utils.WithShortSha("podman network rm " + network.Name),
 		},
 	}
 

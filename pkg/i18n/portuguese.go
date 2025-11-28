@@ -113,7 +113,7 @@ func portugueseSet() TranslationSet {
 		NoServices:   "Sem serviços",
 
 		ConfirmQuit:                 "Tem certeza que deseja sair?",
-		ConfirmUpProject:            "Tem certeza que deseja 'iniciar' seu projeto docker compose?",
+		ConfirmUpProject:            "Tem certeza que deseja 'iniciar' seu projeto podman compose?",
 		MustForceToRemoveContainer:  "Você não pode remover um contêiner em execução a menos que o force. Deseja forçar?",
 		NotEnoughSpace:              "Sem espaço suficiente para renderizar os painéis",
 		ConfirmPruneImages:          "Tem certeza que deseja eliminar todas as imagens não utilizadas?",

@@ -11,7 +11,7 @@ and calling methods on it. The client can be configured from environment
 variables by passing the [FromEnv] option, or configured manually by passing any
 of the other available [Opts].
 
-For example, to list running containers (the equivalent of "docker ps"):
+For example, to list running containers (the equivalent of "podman ps"):
 
 	package main
 
@@ -447,9 +447,9 @@ func (cli *Client) dialerFromTransport() func(context.Context, string, string) (
 
 // Dialer returns a dialer for a raw stream connection, with an HTTP/1.1 header,
 // that can be used for proxying the daemon connection. It is used by
-// ["docker dial-stdio"].
+// ["podman dial-stdio"].
 //
-// ["docker dial-stdio"]: https://github.com/docker/cli/pull/1014
+// ["podman dial-stdio"]: https://github.com/docker/cli/pull/1014
 func (cli *Client) Dialer() func(context.Context) (net.Conn, error) {
 	return cli.dialer()
 }

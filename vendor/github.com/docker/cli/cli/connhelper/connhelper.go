@@ -47,7 +47,7 @@ func getConnectionHelper(daemonURL string, sshFlags []string) (*ConnectionHelper
 		}
 		return &ConnectionHelper{
 			Dialer: func(ctx context.Context, network, addr string) (net.Conn, error) {
-				args := []string{"docker"}
+				args := []string{"podman"}
 				if sp.Path != "" {
 					args = append(args, "--host", "unix://"+sp.Path)
 				}

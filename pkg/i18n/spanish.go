@@ -108,7 +108,7 @@ func spanishSet() TranslationSet {
 		NoServices:   "Sin servicios",
 
 		ConfirmQuit:                "¿Realmente quieres salir?",
-		ConfirmUpProject:           "¿Realmente quieres levantar tu proyecto docker compose?",
+		ConfirmUpProject:           "¿Realmente quieres levantar tu proyecto podman compose?",
 		MustForceToRemoveContainer: "No puedes borrar un contenedor en ejecución a menos de que lo fuerces, ¿quieres hacerlo?",
 		NotEnoughSpace:             "No hay suficiente espacio para renderizar los paneles",
 		ConfirmPruneImages:         "¿Realmente quieres limpiar todas tus imágenes?",

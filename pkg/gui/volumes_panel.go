@@ -119,12 +119,12 @@ func (gui *Gui) handleVolumesRemoveMenu(g *gocui.Gui, v *gocui.View) error {
 	options := []*removeVolumeOption{
 		{
 			description: gui.Tr.Remove,
-			command:     utils.WithShortSha("docker volume rm " + volume.Name),
+			command:     utils.WithShortSha("podman volume rm " + volume.Name),
 			force:       false,
 		},
 		{
 			description: gui.Tr.ForceRemove,
-			command:     utils.WithShortSha("docker volume rm --force " + volume.Name),
+			command:     utils.WithShortSha("podman volume rm --force " + volume.Name),
 			force:       true,
 		},
 	}

@@ -327,11 +327,11 @@ func (gui *Gui) handleContainersRemoveMenu(g *gocui.Gui, v *gocui.View) error {
 
 	menuItems := []*types.MenuItem{
 		{
-			LabelColumns: []string{gui.Tr.Remove, "docker rm " + ctr.ID[1:10]},
+			LabelColumns: []string{gui.Tr.Remove, "podman rm " + ctr.ID[1:10]},
 			OnPress:      func() error { return handleMenuPress(container.RemoveOptions{}) },
 		},
 		{
-			LabelColumns: []string{gui.Tr.RemoveWithVolumes, "docker rm --volumes " + ctr.ID[1:10]},
+			LabelColumns: []string{gui.Tr.RemoveWithVolumes, "podman rm --volumes " + ctr.ID[1:10]},
 			OnPress:      func() error { return handleMenuPress(container.RemoveOptions{RemoveVolumes: true}) },
 		},
 	}
@@ -451,7 +451,7 @@ func (gui *Gui) containerExecShell(container *commands.Container) error {
 	})
 
 	// TODO: use SDK
-	resolvedCommand := utils.ApplyTemplate("docker exec -it {{ .Container.ID }} /bin/sh -c 'eval $(grep ^$(id -un): /etc/passwd | cut -d : -f 7-)'", commandObject)
+	resolvedCommand := utils.ApplyTemplate("podman exec -it {{ .Container.ID }} /bin/sh -c 'eval $(grep ^$(id -un): /etc/passwd | cut -d : -f 7-)'", commandObject)
 	// attach and return the subprocess error
 	cmd := gui.OSCommand.ExecutableFromString(resolvedCommand)
 	return gui.runSubprocess(cmd)

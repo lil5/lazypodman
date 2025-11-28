@@ -137,22 +137,22 @@ func (gui *Gui) handleImagesRemoveMenu(g *gocui.Gui, v *gocui.View) error {
 	options := []*removeImageOption{
 		{
 			description:   gui.Tr.Remove,
-			command:       "docker image rm " + shortSha,
+			command:       "podman image rm " + shortSha,
 			configOptions: image.RemoveOptions{PruneChildren: true, Force: false},
 		},
 		{
 			description:   gui.Tr.RemoveWithoutPrune,
-			command:       "docker image rm --no-prune " + shortSha,
+			command:       "podman image rm --no-prune " + shortSha,
 			configOptions: image.RemoveOptions{PruneChildren: false, Force: false},
 		},
 		{
 			description:   gui.Tr.RemoveWithForce,
-			command:       "docker image rm --force " + shortSha,
+			command:       "podman image rm --force " + shortSha,
 			configOptions: image.RemoveOptions{PruneChildren: true, Force: true},
 		},
 		{
 			description:   gui.Tr.RemoveWithoutPruneWithForce,
-			command:       "docker image rm --no-prune --force " + shortSha,
+			command:       "podman image rm --no-prune --force " + shortSha,
 			configOptions: image.RemoveOptions{PruneChildren: false, Force: true},
 		},
 	}
