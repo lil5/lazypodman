@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/8456633/59972109-8e9c8480-95cc-11e9-8350-38f7f86ba76d.png">
+  <img src="https://github.com/lil5/lazypodman/blob/main/assets/logo.jpg?raw=true">
 </p>
 
 A simple terminal UI for both podman and podman-compose, written in Go with the [gocui](https://github.com/jroimartin/gocui 'gocui') library.
