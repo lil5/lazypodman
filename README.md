@@ -45,19 +45,10 @@ Memorising podman commands is hard. Memorising aliases is slightly less hard. Ke
 
 ## Installation
 
+<!--
 ### Homebrew
 
 Normally `lazydocker` formula can be found in the Homebrew core but we suggest you to tap our formula to get frequently updated one. It works with Linux, too.
-
-**Tap**:
-```sh
-brew install jesseduffield/lazydocker/lazydocker
-```
-
-**Core**:
-```sh
-brew install lazydocker
-```
 
 ### Scoop (Windows)
 
@@ -87,7 +78,7 @@ asdf list all lazydocker
 asdf install lazydocker latest
 asdf global lazydocker latest
 ```
-
+-->
 ### Binary Release (Linux/OSX/Windows)
 
 You can manually download a binary release from [the release page](https://github.com/jesseduffield/lazydocker/releases).
@@ -101,18 +92,11 @@ The script installs downloaded binary to `$HOME/.local/bin` directory by default
 
 ### Go
 
-Required Go Version >= **1.19**
-
 ```sh
-go install github.com/jesseduffield/lazydocker@latest
+go tool github.com/lil5/lazypodman@latest
 ```
 
-Required Go version >= **1.8**, <= **1.17**
-
-```sh
-go get github.com/lil5/lazypodman
-```
-
+<!--
 ### Arch Linux AUR
 
 You can install lazydocker using the [AUR](https://aur.archlinux.org/packages/lazydocker) by running:
@@ -195,6 +179,8 @@ If you encounter a compatibility issue with Docker bundled binary, try rebuildin
 the image with the build argument `--build-arg DOCKER_VERSION="v$(docker -v | cut -d" " -f3 | rev | cut -c 2- | rev)"`
 so that the bundled docker binary matches your host docker binary version.
 
+-->
+
 ### Manual
 
 You'll need to [install Go](https://golang.org/doc/install)
@@ -212,7 +198,7 @@ You can also use `go run main.go` to compile and run in one go (pun definitely i
 Call `lazypodman` in your terminal. I personally use this a lot so I've made an alias for it like so:
 
 ```
-echo "alias lzd='lazypodman'" >> ~/.zshrc
+echo "alias lzp='lazypodman'" >> ~/.zshrc
 ```
 
 (you can substitute .zshrc for whatever rc file you're using)
